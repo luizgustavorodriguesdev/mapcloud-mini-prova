@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Mini Prova – Rastreamento</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <h1>Rastreamento</h1>
+  <div class="search">
+    <input id="inpChave" placeholder="Chave da NF-e" maxlength="60"/>
+    <button id="btnBuscar">Buscar</button>
+  </div>
+</header>
+
+<main class="container">
+  <section id="kpis" class="cards">
+    <div class="card"><h3>Total</h3><p id="kpiTotal">-</p></div>
+    <div class="card"><h3>% Entregue</h3><p id="kpiPct">-</p></div>
+    <div class="card"><h3>Gargalo</h3><p id="kpiGargalo">-</p></div>
+  </section>
+
+  <section class="entregas-list">
+    <h2>Entregas Recentes</h2>
+    <div class="table-wrapper">
+      <table class="entregas-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Chave NF-e</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="lista-entregas">
+          <!-- As linhas serão inseridas aqui pelo JavaScript -->
+        </tbody>
+      </table>
+    </div>
+    <div id="paginacao" class="pagination">
+     
+    </div>
+  </section>
+
+  <section class="layout">
+    <div class="left">
+      <h2>Timeline</h2>
+      <div id="timeline" class="timeline"></div>
+    </div>
+    <div class="right">
+      <h2>Mapa</h2>
+      <div id="map" class="map"></div>
+    </div>
+  </section>
+</main>
+
+<button id="btnTopo" class="topo">Topo</button>
+<div id="toast" class="toast" hidden></div>
+<!-- <div id="loading" class="loading" hidden>Carregando…</div> -->
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

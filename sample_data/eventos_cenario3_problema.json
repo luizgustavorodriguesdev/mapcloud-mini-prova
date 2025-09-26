@@ -1,0 +1,18 @@
+[
+  {
+    "chave": "35250900000000000303550010000000033000000033",
+    "status": "EM_TRANSITO",
+    "lat": "-23.561389",
+    "lng": "-46.656389",
+    "observacao": "Carga em transferência.",
+    "data_hora": "2025-09-11T10:00:00"
+  },
+  {
+    "chave": "35250900000000000303550010000000033000000033",
+    "status": "PROBLEMA_ENTREGA",
+    "lat": "-23.561389",
+    "lng": "-46.656389",
+    "observacao": "Endereço não localizado. Cliente será contatado.",
+    "data_hora": "2025-09-12T15:00:00"
+  }
+]

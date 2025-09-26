@@ -1,0 +1,102 @@
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0f1115;color:#e8e8e8}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#151821;border-bottom:1px solid #232634;position:sticky;top:0}
+.topbar h1{margin:0;font-size:18px}
+.search{display:flex;gap:8px}
+.search input{padding:8px 10px;border:1px solid #2c3142;background:#0f1115;color:#e8e8e8;border-radius:8px;min-width:260px}
+.search button{padding:8px 12px;border:0;background:#2d7ef7;color:white;border-radius:8px;cursor:pointer}
+.container{padding:16px;max-width:1200px;margin:0 auto}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.card{background:#151821;border:1px solid #232634;border-radius:12px;padding:12px}
+.layout{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.map{height:420px;border-radius:12px;border:1px solid #232634}
+.timeline{min-height:420px;background:#151821;border:1px solid #232634;border-radius:12px;padding:12px}
+.timeline-steps{display:flex;gap:12px;align-items:flex-start}
+.step-box{flex:1;padding:12px;border-radius:8px;background:#0f1115;border:1px solid #232634}
+.step-box.done{background:#132233;border-color:#2d7ef7}
+.step-box h4{margin:0 0 6px 0}
+.step-box .when{font-size:12px;color:#9aa0b3}
+.step-box .status{font-size:13px;margin-top:6px}
+
+/* Tabela de Entregas */
+.entregas-list {
+  background: #151821;
+  border: 1px solid #232634;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+.table-wrapper {
+  overflow-x: auto;
+}
+.entregas-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+.entregas-table th, .entregas-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #232634;
+  white-space: nowrap;
+}
+.entregas-table th {
+  font-size: 14px;
+  color: #9aa0b3;
+}
+.entregas-table td {
+  font-size: 13px;
+}
+.entregas-table .chave-col {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: monospace;
+}
+.entregas-table .status-col {
+  font-weight: bold;
+}
+.status-ENTREGUE { color: #34d399; }
+.status-EM_TRANSITO { color: #facc15; }
+.status-PROBLEMA_ENTREGA { color: #f87171; }
+.status-DEVOLVIDA { color: #fb923c; }
+.status-RECEBIDA, .status-NFE_RECEBIDA { color: #9ca3af; }
+
+.copy-btn {
+  background: none;
+  border: none;
+  color: #9aa0b3;
+  cursor: pointer;
+  padding: 4px;
+}
+.copy-btn:hover {
+  color: #2d7ef7;
+}
+
+/* Paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pagination button {
+  padding: 6px 10px;
+  border: 1px solid #2c3142;
+  background: #151821;
+  color: #e8e8e8;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.pagination button.active {
+  background: #2d7ef7;
+  border-color: #2d7ef7;
+  font-weight: bold;
+}
+
+.topo{position:fixed;right:16px;bottom:16px;padding:10px 14px;border-radius:999px;border:0;background:#2d7ef7;color:#fff;cursor:pointer}
+.loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45);backdrop-filter:blur(2px);font-size:18px}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Upload NF-e (test)</title>
+</head>
+<body>
+  <h1>Upload NF-e (multipart/form-data)</h1>
+  <form action="/mapcloud-mini-prova/backend/webhook_nfe_upload.php" method="post" enctype="multipart/form-data">
+    <label>Arquivo XML: <input type="file" name="xml" accept="application/xml,text/xml"/></label>
+    <button type="submit">Enviar</button>
+  </form>
+  <hr/>
+  <h2>Enviar XML como texto</h2>
+  <form action="/mapcloud-mini-prova/backend/webhook_nfe_upload.php" method="post">
+    <textarea name="xml" rows="12" cols="80"></textarea><br/>
+    <button type="submit">Enviar</button>
+  </form>
+  <hr/>
+  <h2>Enviar Base64</h2>
+  <form action="/mapcloud-mini-prova/backend/webhook_nfe_upload.php" method="post">
+    <textarea name="xml_base64" rows="6" cols="80" placeholder="Base64 do XML"></textarea><br/>
+    <button type="submit">Enviar Base64</button>
+  </form>
+  <hr/>
+  <h2>Enviar Evento (JSON)</h2>
+  <form id="formEvento">
+    <textarea name="json_data" rows="12" cols="80" placeholder="Cole o conteúdo do arquivo de eventos JSON aqui..."></textarea><br/>
+    <button type="submit">Enviar Evento</button>
+  </form>
+  <div id="response" style="margin-top: 1em; font-family: monospace;"></div>
+
+  <script>
+    document.getElementById('formEvento').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var jsonData = e.target.elements.json_data.value;
+      var responseDiv = document.getElementById('response');
+      responseDiv.textContent = 'Enviando...';
+
+      fetch('/mapcloud-mini-prova/backend/webhook_evento.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: jsonData
+      })
+      .then(function(response) {
+        return response.json().then(function(data) {
+          return { status: response.status, body: data };
+        });
+      })
+      .then(function(result) {
+        responseDiv.textContent = 'Status: ' + result.status + '\nResposta: ' + JSON.stringify(result.body, null, 2);
+      })
+      .catch(function(error) {
+        console.error('Erro:', error);
+        responseDiv.textContent = 'Erro ao enviar: ' + error.message;
+      });
+    });
+  </script>
+</body>
+</html>
