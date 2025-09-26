@@ -134,9 +134,3 @@ curl.exe "http://localhost/mapcloud-mini-prova/backend/api_metricas_gargalo.php"
 - `sample_data/`: exemplos prontos (`nfe_*.xml`, `eventos_*.json`, `geocode_stub.json`).
 
 ---
-
-## Contato e Walkthrough
-
-Se quiser, posso gerar um `script.sh` / `ps1` com os comandos acima prontos, ou preparar um walkthrough guiado para seu entrevistador.
-
-Boa apresentação — sucesso na entrevista!
